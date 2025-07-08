@@ -1,0 +1,196 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+.main {
+  /* display: none; */
+  /* opacity:0.4; */
+  border: 1px solid #ccc;
+  background-color: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.main h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.emlab,
+.passlab {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.emlab label,
+.passlab label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* .userpass { */
+  .useremail{
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.userpass {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+  width: 100%;
+}
+i{
+  margin-left: -25px;
+  
+}
+
+.useremail:focus,
+.userpass:focus {
+  border-color: #4a90e2;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+transition: background 0.3s;
+
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  margin-block: 15px;
+}
+
+.logemail{
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.logpass {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+  width: 100%;
+}
+
+i{
+  margin-left: -25px;
+  
+}
+
+.logemail:focus,
+.logpass:focus {
+  border-color: #4a90e2;
+}
+
+.logbtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+transition: background 0.3s;
+
+}
+
+.logbtn:hover {
+  background-color: #357abd;
+}
+
+
+/* loader  */
+
+
+.loadmain{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+}
+
+.loader {
+  display: none;
+  width: 70px;
+  aspect-ratio: 1;
+  animation: l6-0 .8s linear infinite;
+  transform: rotate(90deg);
+}
+.loader:before,
+.loader:after {
+  content:"";
+  grid-area: 1/1;
+}
+.loader:before {
+  clip-path: polygon(100% 50%,90.45% 79.39%,65.45% 97.55%,34.55% 97.55%,9.55% 79.39%,0% 50%,9.55% 20.61%,34.55% 2.45%,65.45% 2.45%,90.45% 20.61%,100% 50%,85.6% 24.14%,63.6% 8.15%,36.4% 8.15%,14.4% 24.14%,6% 50%,14.4% 75.86%,36.4% 91.85%,63.6% 91.85%,85.6% 75.86%,94% 50%,85.6% 24.14%);
+  background: #574951;
+}
+.loader:after {
+  background: #83988E;
+  clip-path: polygon(100% 50%,65.45% 97.55%,9.55% 79.39%,9.55% 20.61%,65.45% 2.45%);
+  margin: 23%;
+  translate: -143% 0;
+  transform-origin: right;
+  animation: inherit;
+  animation-name: l6-1;
+}
+@keyframes l6-0 {
+  0%{rotate:  18deg}
+  to{rotate: -18deg}
+}
+@keyframes l6-1 {
+  0%{rotate: -54deg}
+  to{rotate:  54deg}
+}
