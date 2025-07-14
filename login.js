@@ -112,19 +112,13 @@ logoutbtn && logoutbtn.addEventListener("click", async () => {
 
     }
 })
-let google = document.querySelector(".goobtn")
-google && google.addEventListener("click", async()=>{
 
-let data = await merg.auth.signInWithOAuth({
-  provider: 'google',
-
-})
-console.log(data);
-console.log(error.message);
-})
 
 // Handle Google login
-google &&  google.addEventListener('click', async () => {
+let google = document.querySelector(".goobtn")
+
+// const google = document.getElementById('loginWithGoogle');
+google && google.addEventListener('click', async () => {
         try {
             const { error } = await merg.auth.signInWithOAuth({
                 provider: 'google',
@@ -139,7 +133,6 @@ google &&  google.addEventListener('click', async () => {
             alert(error.message || 'Google login failed');
         }
 });
-
 
 // Check for returning Google OAuth redirect
 document.addEventListener('DOMContentLoaded', async () => {
