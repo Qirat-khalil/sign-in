@@ -65,13 +65,34 @@ btn && btn.addEventListener("click", () => {
 })
 
 
-let google= document.querySelector(".goobtn")
-google.addEventListener("click", async()=>{
+// let google= document.querySelector(".goobtn")
+// google.addEventListener("click", async()=>{
 
-let data = await merg.auth.signInWithOAuth({
-  provider: 'google',
+// let data = await merg.auth.signInWithOAuth({
+//   provider: 'google',
 
-})
-console.log(data);
+// })
+// console.log(data);
 
-})
+// })
+
+
+// Handle Google login
+let google = document.querySelector(".goobtn")
+
+// const google = document.getElementById('loginWithGoogle');
+google && google.addEventListener('click', async () => {
+        try {
+            const { error } = await merg.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: window.location.origin + '/post.html',
+                    queryParams: { access_type: 'offline', prompt: 'consent' },
+                },
+            });
+            if (error) throw error;
+        } catch (error) {
+            console.error('Google login error:', error);
+            alert(error.message || 'Google login failed');
+        }
+});

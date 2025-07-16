@@ -115,24 +115,24 @@ logoutbtn && logoutbtn.addEventListener("click", async () => {
 
 
 // Handle Google login
-let google = document.querySelector(".goobtn")
+// let google = document.querySelector(".goobtn")
 
-// const google = document.getElementById('loginWithGoogle');
-google && google.addEventListener('click', async () => {
-        try {
-            const { error } = await merg.auth.signInWithOAuth({
-                provider: 'google',
-                options: {
-                    redirectTo: window.location.origin + '/post.html',
-                    queryParams: { access_type: 'offline', prompt: 'consent' },
-                },
-            });
-            if (error) throw error;
-        } catch (error) {
-            console.error('Google login error:', error);
-            alert(error.message || 'Google login failed');
-        }
-});
+// // const google = document.getElementById('loginWithGoogle');
+// google && google.addEventListener('click', async () => {
+//         try {
+//             const { error } = await merg.auth.signInWithOAuth({
+//                 provider: 'google',
+//                 options: {
+//                     redirectTo: window.location.origin + '/post.html',
+//                     queryParams: { access_type: 'offline', prompt: 'consent' },
+//                 },
+//             });
+//             if (error) throw error;
+//         } catch (error) {
+//             console.error('Google login error:', error);
+//             alert(error.message || 'Google login failed');
+//         }
+// });
 
 // Check for returning Google OAuth redirect
 document.addEventListener('DOMContentLoaded', async () => {
@@ -140,12 +140,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         const {
             data: { session },
         } = await merg.auth.getSession();
+        console.log(session , "error");
+        
         if (session) window.location.href = 'post.html';
     }
     if (!window.location.pathname.includes('index.html') && !window.location.pathname.includes('login.html')) {
         displaypro();
     }
 });
+
+
+
+
+
+
+
+
+
 
 
 
